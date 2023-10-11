@@ -85,7 +85,17 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
 			}
 		}
 
+		console.log("values", values);
+
 		await updateUser({
+			username: values.username,
+			name: values.name,
+			bio: values.bio,
+			image: values.profile_photo,
+			userId: user.id,
+			path: pathname,
+		});
+		console.log({
 			username: values.username,
 			name: values.name,
 			bio: values.bio,
