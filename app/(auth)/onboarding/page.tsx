@@ -6,8 +6,6 @@ async function Page() {
 	const user = await currentUser();
 	if (!user) return null;
 	const userInfo = await fetchUser(user.id);
-	console.log("userinfo", userInfo);
-	console.log("user", user);
 
 	const userData = {
 		id: user.id,
@@ -17,10 +15,6 @@ async function Page() {
 		bio: userInfo ? userInfo?.bio : "",
 		image: userInfo ? userInfo?.image : user.imageUrl,
 	};
-
-	if (userInfo) {
-		console.log("24", userData);
-	}
 
 	return (
 		<main className="mx-auto flex max-w-3xl flex-col justify-start px-10 py-20">
