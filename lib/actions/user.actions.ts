@@ -96,10 +96,10 @@ export async function fetchUsers({
 	searchString?: string;
 	pageNumber?: number;
 	pageSize?: number;
-	sortBy?: SortOrder; // Correct the type definition
+	sortBy?: SortOrder;
 }) {
 	try {
-		await connectToDB(); // Assuming connectToDB is an appropriate function to connect to the database
+		await connectToDB();
 
 		const skipAmount = (pageNumber - 1) * pageSize;
 
